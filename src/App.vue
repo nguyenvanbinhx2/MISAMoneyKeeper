@@ -1,12 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name:'app',
+  data(){
+    return {
+      authenciate:false,
+      mockAccount:{
+        username:"admin",
+        password:"1"
+      }
+    }
+
+  },
+  mounted(){
+    if(!this.authenciate){
+      // this.$router.replace({name:'Login'});
+      // this.$router.push('login')
+
+    }
+  },
+  methods:{
+    setAuthenciate(status){
+      this.authenciate =status;
+
+    },
+    logout(){
+      this.authenciate =false;
+    }
+  }
+}
+</script>
+
 
 <style>
 #app {
@@ -15,6 +44,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100vh;
+  
 }
 
 #nav {
