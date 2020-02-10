@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <NavBar/>
-    <div class="" style="display:flex">
+    <div class="d-flex">
       <SideBar/>
-    <router-view/>
+      <router-view/>
     </div>
     
   </div>

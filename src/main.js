@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import BootstrapVueTreeView from 'bootstrap-vue-treeview'
 
+export const EventBus = new Vue();
 Vue.use(BootstrapVueTreeView)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
