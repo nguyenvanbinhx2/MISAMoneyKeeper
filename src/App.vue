@@ -1,11 +1,22 @@
 <template>
   <div id="app">
+    <NavBar/>
+    <div class="" style="display:flex">
+      <SideBar/>
     <router-view/>
+    </div>
+    
   </div>
 </template>
 
 <script>
+import NavBar from '../src/components/Navbar.vue'
+import SideBar from '../src/components/Sidebar.vue'
 export default {
+  components:{
+    NavBar,
+    SideBar
+  },
   name:'app',
   data(){
     return {
