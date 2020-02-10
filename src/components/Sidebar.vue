@@ -15,7 +15,7 @@
           <a href="#">
            <img src="..\assets\icons8_spiral_bound_booklet_48px_1.png"><p>Sổ Ghi Chép</p></a>
         </li>
-        <li><a href="#"><p>Hạn Mức Chi</p></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-eur large-icon"></span><p>Hạn Mức Chi</p></a></li>
         <li><a href="#"><p>Tài Khoản</p></a></li>
         <li><a href="#"><p>Báo Cáo</p></a></li>
         <li><a href="#" src=""><p>Khác</p></a>
@@ -68,5 +68,8 @@ export default {
   width: 100%;
   height: 60px;
   background-color: #135995;
+}
+.large-icon{
+font-size:  32px;
 }
 </style>
