@@ -1,25 +1,18 @@
 <template>
   <div class="menu-on-left border shadow-sm">
     <ul class="ml-0">
-      <li
-        v-for="item in items"
-        v-bind:key="item.id"
-        @mouseover="item.isHover = true"
-        @mouseleave="item.isHover = false"
-        class="d-flex justify-content-center align-items-center" v-bind:class="{active:checkActiveHome(item.id)}"
-      >
-        <a v-bind:href=[item.activeComponent] >
-          <span
-            class="glyphicon"
-            v-bind:class="[
-              { homeicon: !item.isHover, homeiconhover: item.isHover, activeicon:checkActiveHome(item.id) },
-              item.iconClass
-            ]"
-          >
-          </span>
-          <p>{{ item.navName }}</p>
-        </a>
-      </li>
+      <!-- <router-link to="/" class="text-decoration-none"> -->
+        <li
+          v-for="item in items"
+          v-bind:key="item.id"
+          class="justify-content-center align-items-center d-block" 
+        >
+        <router-link v-bind:to="item.activeComponent" class="router-link" >
+          <i v-bind:class="item.iconClass" style="font-size:32px"></i>
+          <p>{{item.navName}}</p>
+                </router-link>
+
+        </li>
     </ul>
   </div>
 </template>
@@ -29,47 +22,62 @@ export default {
   name: "sidebar",
   data() {
     return {
-      isActiveHome: false,
       items: [
         {
           id: 1,
-          iconClass: "glyphicon-home",
+          iconClass: "fas fa-home",
           isHover: false,
           navName: "Tổng quan",
-          activeComponent: '/'
+          activeComponent: "/home"
         },
         {
           id: 2,
-          iconClass: "glyphicon-book",
+          iconClass: "fas fa-book",
           isHover: false,
           navName: "Sổ Ghi Chép",
-          activeComponent:'/notebook'
+          activeComponent: "/notebook"
         },
 
         {
+          id: 3,
+          iconClass: "far fa-calculator",
+          isHover: false,
+          navName: "Hạn Mức Chi",
+          activeComponent: "/moneykeeper"
+        },
+        {
           id: 4,
-          iconClass: "glyphicon-folder-close",
+          iconClass: "far fa-list-alt",
           isHover: false,
           navName: "Tài Khoản",
-          activeComponent: '/account'
+          activeComponent: "/account"
         },
         {
           id: 5,
-          iconClass: "glyphicon-align-justify",
+          iconClass: "far fa-calculator",
+          isHover: false,
+          navName: "Tổng quan",
+          activeComponent: "/caculator"
+        },
+        {
+          id: 6,
+          iconClass: "fab fa-wpforms",
+          isHover: false,
+          navName: "Báo Cáo",
+          activeComponent: "/report"
+        },
+        {
+          id: 7,
+          iconClass: "fas fa-bars",
           isHover: false,
           navName: "Khác",
-          activeComponent: "/more"
-          
+          activeComponent: "/something"
         }
       ]
     };
   },
-  methods:{
-    checkActiveHome(number){
-      if (number==1)
-      return true;
-      return false;
-    }
+  methods: {
+
   }
 };
 </script>
@@ -86,7 +94,6 @@ export default {
   background-color: #017de3;
 }
 .menu-on-left ul li {
-  padding: 10px;
   text-align: center;
   border-bottom: 1px solid #135995;
   margin: 0;
@@ -103,18 +110,23 @@ export default {
 }
 .menu-on-left ul li:hover {
   background-color: #319e4e;
-}
-.active {
-  background-color: #319e4e;
-  font-size: 32px;
   color: rgb(8, 72, 102);
 }
-.homeicon {
-  font-size: 32px;
+.menu-on-left ul li {
   color: white;
 }
-.homeiconhover,.activeicon {
-  font-size: 32px;
-  color: rgb(8, 72, 102);
+
+.router-link{
+  height: 100%;
+  width: 100%;
+  display: block;
+  padding:10px;
+  
+}
+.router-link:hover{
+  color:rgb(8, 72, 102);
+}
+.router-link-active{
+  background-color:#319e4e; 
 }
 </style>
