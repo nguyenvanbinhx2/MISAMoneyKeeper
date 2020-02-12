@@ -1,18 +1,17 @@
 <template>
   <div class="menu-on-left border shadow-sm">
-    <ul class="ml-0">
+    <ul class="ml-0 p-0">
       <!-- <router-link to="/" class="text-decoration-none"> -->
-        <li
-          v-for="item in items"
-          v-bind:key="item.id"
-          class="justify-content-center align-items-center d-block" 
-        >
-        <router-link v-bind:to="item.activeComponent" class="router-link" >
+      <li
+        v-for="item in items"
+        v-bind:key="item.id"
+        class=""
+      >
+        <router-link v-bind:to="item.activeComponent" class="router-link">
           <i v-bind:class="item.iconClass" style="font-size:32px"></i>
           <p>{{item.navName}}</p>
-                </router-link>
-
-        </li>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -76,9 +75,7 @@ export default {
       ]
     };
   },
-  methods: {
-
-  }
+  methods: {}
 };
 </script>
 <style scoped>
@@ -87,9 +84,8 @@ export default {
   align-items: stretch;
 }
 .menu-on-left {
-  width: 100px;
+  width: 90px;
   height: 100%;
-  margin-left: 0px;
   border: 1px solid #000;
   background-color: #017de3;
 }
@@ -116,17 +112,17 @@ export default {
   color: white;
 }
 
-.router-link{
+.router-link {
   height: 100%;
   width: 100%;
   display: block;
-  padding:10px;
-  
+  padding: 10px;
 }
-.router-link:hover{
-  color:rgb(8, 72, 102);
+.router-link:hover {
+  color: rgb(8, 72, 102);
 }
-.router-link-active{
-  background-color:#319e4e; 
+.router-link-active {
+  background-color: #319e4e;
+  color: rgb(8, 72, 102) !important;
 }
 </style>

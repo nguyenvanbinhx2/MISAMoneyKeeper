@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Login from '../components/Login.vue'
 import DayHistory from '../components/DayHistory.vue'
-// import Welcome from '../views/Welcome.vue' 
+import Welcome from '../views/Welcome.vue' 
 import ViewDay from '../components/ViewDay.vue'
 
 Vue.use(VueRouter)
@@ -11,8 +10,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'welcome',
+    component: Welcome
   },
   {
     path:'/viewday',
@@ -37,11 +36,6 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  {
-    path:'/welcome',
-    name:'welcome',
-    component: () => import('../views/Welcome.vue')
-  }
 ]
 
 const router = new VueRouter({
