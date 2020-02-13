@@ -4,11 +4,11 @@
       <!-- <router-link to="/" class="text-decoration-none"> -->
       <li
         v-for="item in items"
-        v-bind:key="item.id"
+        :key="item.id"
         class=""
       >
-        <router-link v-bind:to="item.activeComponent" class="router-link">
-          <i v-bind:class="item.iconClass" style="font-size:32px"></i>
+        <router-link :to="item.activeComponent" class="router-link">
+          <i :class="item.iconClass" style="font-size:32px"></i>
           <p>{{item.navName}}</p>
         </router-link>
       </li>
@@ -49,7 +49,7 @@ export default {
           iconClass: "far fa-list-alt",
           isHover: false,
           navName: "Tài Khoản",
-          activeComponent: "/account"
+          activeComponent: "/finance"
         },
         {
           id: 5,

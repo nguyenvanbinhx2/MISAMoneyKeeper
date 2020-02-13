@@ -4,6 +4,7 @@ import Login from '../components/Login.vue'
 import DayHistory from '../components/DayHistory.vue'
 import Welcome from '../views/Welcome.vue' 
 import ViewDay from '../components/ViewDay.vue'
+import Finance from '../components/Finance'
 
 Vue.use(VueRouter)
 
@@ -36,6 +37,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+
+  {
+    path: '/finance',
+    name: 'finance',
+    component: Finance
+  }
 ]
 
 const router = new VueRouter({
