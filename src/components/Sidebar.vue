@@ -39,7 +39,7 @@ export default {
 
         {
           id: 3,
-          iconClass: "far fa-calculator",
+          iconClass:"far fa-building",
           isHover: false,
           navName: "Hạn Mức Chi",
           activeComponent: "/moneykeeper"
@@ -51,26 +51,20 @@ export default {
           navName: "Tài Khoản",
           activeComponent: "/finance"
         },
+        
         {
           id: 5,
-          iconClass: "far fa-calculator",
-          isHover: false,
-          navName: "Tổng quan",
-          activeComponent: "/caculator"
-        },
-        {
-          id: 6,
           iconClass: "fab fa-wpforms",
           isHover: false,
           navName: "Báo Cáo",
           activeComponent: "/report"
         },
         {
-          id: 7,
+          id: 6,
           iconClass: "fas fa-bars",
           isHover: false,
           navName: "Khác",
-          activeComponent: "/something"
+          activeComponent: "/other"
         }
       ]
     };

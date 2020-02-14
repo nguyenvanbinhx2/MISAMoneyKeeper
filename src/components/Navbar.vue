@@ -3,23 +3,30 @@
         <div class="row">
                 <div class="col-md-5 d-flex">
                 <img src="./../assets/Logo_MK.png" style="height:64px;width:85px" />
-                <h1 class="text-white mx-5 pt-2" style="font-size:26px">Sổ Thu Chi MISA</h1>
+                <div class="align-items-center d-flex">
+                        <h1 class="text-white mx-5 pt-2 align-items-center" style="font-size:24px">Sổ Thu Chi MISA</h1>
                 <i class="far fa-credit-card pl-2 icon-style"></i>
-                <p style="font-size:18px" class="text-white ml-1 pt-3">Tài chính hiện tại:</p>
+                <p style="font-size:18px" class="text-white pl-2 m-auto ">Tài chính hiện tại:</p>
                 </div>
-                <div class="col-md-3"></div>
-                <div class="col-md-4 d-flex">
-                        <i class="fas fa-bell fa-2x mr-3"></i>
-                        <button type="button" id="add-note" class="btn btn-succeess mr-3" data-toggle="modal" data-target="#exampleModal">
+                
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-3 ml-auto d-flex align-items-center" >
+                        <div class="notification ">
+                                <i class="fas fa-bell icon-style m-auto" style="cursor:pointer;color:white;"></i>
+                                <div class="noti_Counter rounded-circle"><p style="font-size:11px;text-align:center">7</p></div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-success btn-style shadow border-0 mr-3 ml-3 " data-toggle="modal" data-target="#exampleModal" >
                                 <i class="fas fa-plus"></i> Thêm chi tiêu
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="">
                                 <ExpenseNote/>
                         </div>   
-                        <div class="user-account">
-                                <button type="button" @click="opening" class="btn btn-secondary " id="dropdownMenu" >Xin chaof Duc</button>
+                        <div class="user-account ">
+                                <button type="button"  @click="open" class="btn btn-secondary shadow border-0 btn-style "  id="dropdownMenu" >Xin chào Đức</button>
 
-                                <div class="dropdown-content" v-if="open">
+                                <div class="dropdown-content" v-if="open" >
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Nâng cấp lên phiên bản Premium</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Thay đổi thông tin cá nhân</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Liên kết tài khoản</span></div></a></li>
@@ -60,10 +67,10 @@ export default {
 }
 
 .dropdown-content{
-            position: absolute;
+        position: absolute;
+        margin-top:0px;
     right: 1.5%;
     background-color: #f1f1f1;
-    top:55px;
     border: 1px solid lightgray;
     border-radius: 5px;
 
@@ -94,17 +101,65 @@ export default {
 }
 .icon-style {
   color: white;
+  font-size: 28px;
 }
 p {
   font-size: 18px;
   color: white;
 }
 
-button:hover{
-        color: rgb(8, 72, 102);
-        border-style: none;
-}
+
 .active{
         background-color: white;
 }
+
+    .active{
+        background: green;
+    }
+.menu-left span
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .menu-on-left:hover{
+        background-color:#319e4e;
+        color:rgb(8, 72, 102);
+    }
+    .list-finance{
+        display: none;
+    }
+    .item-in-list:hover>.list-finance{
+        display: block
+    }
+    .noti_Counter{
+            position: absolute;
+            background-color: #E1141E;
+            color:white;
+            font-size:20px;
+            font-weight: normal;
+                margin-top: -35px;
+                margin-left: 13px;
+                width: 20px;
+                height: 20px;
+
+            
+    }
+    .notification{
+            position: relative;
+    }
+    .btn-style{
+            width:150px;height:40px;
+
+    }
+    .btn-style:hover{
+            color: rgb(8, 72, 102);
+    }
+    .btn-style:active{
+            color: rgb(8, 72, 102);
+
+    }
+    .user-account{
+            height: 100%;
+    }
+
 </style>

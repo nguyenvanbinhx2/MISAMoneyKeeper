@@ -3,9 +3,10 @@
     <NavBar/>
     <div class="d-flex">
       <SideBar/>
+      <div class="" style="width:100%;height:100%">
       <router-view/>
     </div>
-    
+    </div>
   </div>
 </template>
 
@@ -49,17 +50,12 @@ export default {
 
 
 <style>
-/* #app, .d-flex{
+#app {
   height: 100%;
   width: 100%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
   
-} */
+  
+} 
 
 #nav {
   padding: 30px;
