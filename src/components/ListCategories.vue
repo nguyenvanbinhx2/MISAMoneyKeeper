@@ -1,40 +1,33 @@
 <template>
-  <div class="home">
-  </div>
-
+        <SubSidebar v-bind:subSidebars="subSidebars">Khác</SubSidebar>
 </template>
-
 <script>
-// @ is an alias to /src
 export default {
-  name: 'home',
-  data(){
-    return {
-       subSidebars: [
+    data(){
+        return{
+            subSidebars: [
         {
           id: 1,
-          nameSub: "Tài khoản",
-          iconSub: "fas fa-user fa-1x",
+          nameSub: "Thu chi định kì",
+          iconSub: "far fa-clock fa-1x",
           activeComponent: "account"
         },
         {
           id: 2,
-          nameSub: "Sổ tiết kiệm",
-          iconSub: "fas fa-user fa-1x",
+          nameSub: "Hạng mục thu chi",
+          iconSub: "fas fa-server fa-1x",
           activeComponent: "login"
         },
         {
           id: 3,
-          nameSub: "Tích lũy",
+          nameSub: "Trợ giúp/Pj",
           iconSub: "fas fa-user fa-1x",
           activeComponent: "expenseNote"
         }
-      ]
+      ],
+
+        }
     }
-  },
-  components:{
-    
-  }
 }
 </script>
 <style scoped>

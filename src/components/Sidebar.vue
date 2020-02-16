@@ -4,11 +4,11 @@
       <!-- <router-link to="/" class="text-decoration-none"> -->
       <li
         v-for="item in items"
-        v-bind:key="item.id"
+        :key="item.id"
         class=""
       >
-        <router-link v-bind:to="item.activeComponent" class="router-link">
-          <i v-bind:class="item.iconClass" style="font-size:32px"></i>
+        <router-link :to="item.activeComponent" class="router-link">
+          <i :class="item.iconClass" style="font-size:32px"></i>
           <p>{{item.navName}}</p>
         </router-link>
       </li>
@@ -39,7 +39,7 @@ export default {
 
         {
           id: 3,
-          iconClass: "far fa-calculator",
+          iconClass:"far fa-building",
           isHover: false,
           navName: "Hạn Mức Chi",
           activeComponent: "/moneykeeper"
@@ -49,28 +49,22 @@ export default {
           iconClass: "far fa-list-alt",
           isHover: false,
           navName: "Tài Khoản",
-          activeComponent: "/account"
+          activeComponent: "/finance"
         },
+        
         {
           id: 5,
-          iconClass: "far fa-calculator",
-          isHover: false,
-          navName: "Tổng quan",
-          activeComponent: "/caculator"
-        },
-        {
-          id: 6,
           iconClass: "fab fa-wpforms",
           isHover: false,
           navName: "Báo Cáo",
           activeComponent: "/report"
         },
         {
-          id: 7,
+          id: 6,
           iconClass: "fas fa-bars",
           isHover: false,
           navName: "Khác",
-          activeComponent: "/something"
+          activeComponent: "/other"
         }
       ]
     };

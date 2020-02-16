@@ -4,10 +4,18 @@ import Login from '../components/Login.vue'
 import DayHistory from '../components/DayHistory.vue'
 import Welcome from '../views/Welcome.vue' 
 import ViewDay from '../components/ViewDay.vue'
-
+import Finance from '../components/Finance'
+import Home from '../views/Home.vue'
+import Other from '../views/Other.vue'
+import Report from '../views/Report.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path:"/home",
+    name:'home',
+    component :Home
+  },
   {
     path: '/',
     name: 'welcome',
@@ -24,6 +32,11 @@ const routes = [
     component: DayHistory
   },
   {
+    path:'/report',
+    name:'report',
+    component: Report
+  },
+  {
     path:'/login',
     name:'login',
     component: Login
@@ -36,6 +49,17 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+
+  {
+    path: '/finance',
+    name: 'finance',
+    component: Finance
+  },
+  {
+    path:'/other',
+    name:'other',
+    component :Other
+  }
 ]
 
 const router = new VueRouter({
