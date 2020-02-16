@@ -1,13 +1,13 @@
 <template>
-  <div class="container-top d-flex ">
-    <img src="./../assets/Logo_MK.png" style="height:80px;width:90px" />
+  <div class="container-top d-flex align-item-center">
+    <img src="./../assets/Logo_MK.png" style="height:64px;width:90px" />
     <h1 class="text-white mx-5 pt-2" style="font-size:26px">Sổ Thu Chi MISA</h1>
     <i class="far fa-credit-card pl-2 icon-style"></i>
     <p style="font-size:18px" class="text-white ml-1 pt-3">Tài chính hiện tại:</p>
     <!-- <button type="button" class="ml-auto bg-success border-0 mr-3"> -->
-        <i class="ml-auto fas fa-bell fa-2x mr-3"></i>
+        <i class="ml-auto fas fa-bell fa-2x icon-style"></i>
     <!-- </button> -->
-    <button type="button" id="add-note" @click.prevent="addNoteClick" class="btn btn-lg mr-3 close" data-dismiss="modal" aria-label="Close" >
+    <button type="button" id="add-note" @click.prevent="addNoteClick" class="btn btn-success btn-sm mr-3" >
         <i class="fas fa-plus"></i> Thêm chi tiêu
     </button>
 
@@ -21,7 +21,6 @@
                     <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Đặt mật khẩu</span></div></a></li>
                     <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Đăng xuất</span></div></a></li>
             </div>
-
 
     </div>
 <!-- Button trigger modal -->
@@ -95,20 +94,22 @@ export default {
 }
 .icon-style {
   color: white;
+  margin-top:15px;
+  font-size: 32px;
+  margin-right: 10px;
 }
 p {
   font-size: 18px;
   color: white;
 }
-.button-style {
+/* .button-style {
   border: 1px solid #000;
   margin-right: 50px;
   width: 200px;
   padding-top: 10px;
   border-radius: 15px;
   border-color: rgb(8, 72, 102);
-  /* -moz-outline-radius: none; */
-}
+} */
 
 button:hover{
         color: rgb(8, 72, 102);
