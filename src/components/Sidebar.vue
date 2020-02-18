@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-on-left border shadow-sm">
+  <div class="menu-on-left border shadow">
     <ul class="ml-0 p-0">
       <!-- <router-link to="/" class="text-decoration-none"> -->
       <li
@@ -27,7 +27,8 @@ export default {
           iconClass: "fas fa-home",
           isHover: false,
           navName: "Tổng quan",
-          activeComponent: "/home"
+          activeComponent: "/home",
+          
         },
         {
           id: 2,
@@ -82,6 +83,7 @@ export default {
   height: 100%;
   border: 1px solid #000;
   background-color: #017de3;
+  z-index: 1;
 }
 .menu-on-left ul li {
   text-align: center;

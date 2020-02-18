@@ -1,42 +1,33 @@
 <template>
-  <div class="home">
+  <div class="home border shadow" @show="emitActive">
+fffffffffffffffff
   </div>
 
 </template>
 
 <script>
 // @ is an alias to /src
+import {EventBus} from '../main.js'
 export default {
   name: 'home',
   data(){
     return {
-       subSidebars: [
-        {
-          id: 1,
-          nameSub: "Tài khoản",
-          iconSub: "fas fa-user fa-1x",
-          activeComponent: "account"
-        },
-        {
-          id: 2,
-          nameSub: "Sổ tiết kiệm",
-          iconSub: "fas fa-user fa-1x",
-          activeComponent: "login"
-        },
-        {
-          id: 3,
-          nameSub: "Tích lũy",
-          iconSub: "fas fa-user fa-1x",
-          activeComponent: "expenseNote"
-        }
-      ]
+      isActive: true
     }
   },
-  components:{
-    
+  methods:{
+    emitActive(){
+      EventBus.$emit('emitActive',this.isActive)
+    }
   }
+  
 }
 </script>
 <style scoped>
+.home{
+  width: 100%;
+  border:1px solid black;
+  height: 100%;
+}
 
 </style>

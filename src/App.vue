@@ -3,9 +3,14 @@
     <NavBar/>
     <div class="d-flex">
       <SideBar/>
-      <div class="" style="width:100%;height:100%">
-      <router-view/>
-    </div>
+        <div class="main">
+            <transition  name="view" >
+              <router-view style="overflow:hidden"></router-view>
+</transition>
+
+       </div>
+      
+   
     </div>
   </div>
 </template>
@@ -21,31 +26,14 @@ export default {
   name:'app',
   data(){
     return {
+      prevHeight:0,
       authenciate:false,
-      mockAccount:{
-        username:"admin",
-        password:"1"
-      }
+
     }
 
   },
-  mounted(){
-    if(!this.authenciate){
-      // this.$router.replace({name:'Login'});
-      // this.$router.push('login')
-
-    }
-  },
-  methods:{
-    setAuthenciate(status){
-      this.authenciate =status;
-
-    },
-    logout(){
-      this.authenciate =false;
-    }
-  }
-}
+  
+   }
 </script>
 
 
@@ -55,7 +43,13 @@ export default {
   width: 100%;
   
   
+  
 } 
+.main{
+  width: 100%;
+  height: 100%;
+  
+}
 
 #nav {
   padding: 30px;
@@ -68,5 +62,26 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.view-enter-active,.view-leave-active{
+  transition: opacity 0.3s ease-in-out,transform 0.3s ease;
+
+}
+.view-enter-active{
+  transition-delay: 0.5s
+}
+.view-enter{
+  opacity: 0;
+  transform: translateX(-20px)
+}
+.view-enter-to,.view-leave{
+  opacity: 0.5;
+  transform: translateX(0px);
+  z-index: -1;
+}
+.view-leave-to{
+  opacity: 0;
+  transform: translateX(100px);
+  z-index: -1
 }
 </style>
