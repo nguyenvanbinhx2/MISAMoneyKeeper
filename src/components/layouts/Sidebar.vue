@@ -1,7 +1,6 @@
 <template>
-  <div class="menu-on-left border shadow-sm" style="height:100%">
-  <img src="./../assets/Logo_MK.png"  style="height:64px;width:85px;curser:pointer" />
-
+  <div class="menu-on-left shadow-sm " style="height:100%">
+  <div class="d-flex m-auto" style="height:66px;width:50px"><img src="../../assets/Logo_STC.png"  style="height:45px;curser:pointer;" class="m-auto" /></div>
     <ul class="ml-0  p-0 list-menu hidden-xs-down" style="height:100%">
 
       <!-- <router-link to="/" class="text-decoration-none"> -->
@@ -10,9 +9,9 @@
         :key="item.id"
         class=""
       >
-        <router-link :to="item.activeComponent" class="router-link">
+        <router-link :to="item.activeComponent" class="router-link d-flex flex-column justify-content-center align-items-center">
           <i :class="item.iconClass" style="font-size:32px"></i>
-          <p>{{item.navName}}</p> 
+          <div>{{item.navName}}</div> 
         </router-link>
       </li>
     </ul>
@@ -20,7 +19,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
 export default {
   name: "sidebar",
   data() {
@@ -56,7 +54,7 @@ export default {
           iconClass: "far fa-list-alt",
           isHover: false,
           navName: "Tài Khoản",
-          activeComponent: "/finance"
+          activeComponent: "/account"
         },
         
         {
@@ -83,21 +81,7 @@ export default {
   //   }
   // },
   
-  watched(){
-    $(window).resize(function(){
-      if($(window).width() <= 600){
-        // this.bind = $('.list-menu').css('display', 'none');
-          this.bindSize ='A'; 
-          
-               }
-      else{
-        // this.bind = $('.list-menu').css('display', 'block');
-        this.bindSize= 'S';
-      }
-      console.log(this.bindSize);
-      
-    })
-  }
+  
 };
 </script>
 <style scoped>
@@ -114,6 +98,8 @@ export default {
   border: 1px solid #000;
   background-color: rgb(8, 72, 102);
   z-index: 1;
+  position: fixed
+
 }
 .menu-on-left ul li {
   text-align: center;
@@ -128,7 +114,6 @@ export default {
   font-size: 10px;
   display: content;
   text-decoration: none;
-  /* justify-content: middle; */
 }
 .menu-on-left ul li:hover {
   background-color: #319e4e;

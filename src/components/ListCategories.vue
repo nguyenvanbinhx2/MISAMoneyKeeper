@@ -2,6 +2,7 @@
         <SubSidebar v-bind:subSidebars="subSidebars">Khác</SubSidebar>
 </template>
 <script>
+import SubSidebar from '../components/layouts/SubSidebar.vue'
 export default {
     data(){
         return{
@@ -27,6 +28,9 @@ export default {
       ],
 
         }
+    },
+    components:{
+      SubSidebar
     }
 }
 </script>

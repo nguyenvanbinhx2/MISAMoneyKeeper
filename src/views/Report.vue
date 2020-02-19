@@ -1,11 +1,13 @@
 <template>
 
-<div class="container-report">  
+<div class="container-report d-flex">  
     <SubSidebar v-bind:subSidebars="subSidebars">Báo cáo</SubSidebar>
+  <router-view></router-view>
 </div>
+
 </template>
 <script>
-import SubSidebar from '../components/SubSidebar.vue'
+import SubSidebar from '../components/layouts/SubSidebar.vue'
 export default {
   data() {
     return {
@@ -14,38 +16,38 @@ export default {
           id: 1,
           nameSub: "Tài chính hiện tại",
           iconSub: "fas fa-chart-pie",
-          activeComponent: "account"
+          activeComponent: "/report/financial"
         },
         {
           id: 2,
           nameSub: "Theo dõi vay nợ",
           iconSub: "fas fa-list-ul",
-          activeComponent: "login"
+          activeComponent: "/report/lentborrowed"
         },
         {
           id: 3,
           nameSub: "Phân tích chi tiêu",
           iconSub: "far fa-money-bill-alt",
-          activeComponent: "expenseNote"
+          activeComponent: "/report/analysis"
         },
         
         {
           id: 4,
           nameSub: "Đối tượng thu/chi",
           iconSub: "fas fa-users",
-          activeComponent: "expenseNote"
+          activeComponent: "/report/payee"
         },
         {
           id: 5,
           nameSub: "Chuyến đi, sự kiện",
           iconSub: "far fa-calendar-alt",
-          activeComponent: "expenseNote"
+          activeComponent: "/report/events"
         },
         {
           id: 6,
           nameSub: "Phân tích tài chính",
           iconSub: "fas fa-chart-bar",
-          activeComponent: "expenseNote"
+          activeComponent: "/report/charbar"
         },
        
       ]

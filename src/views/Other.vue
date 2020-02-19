@@ -1,10 +1,11 @@
 <template>
-<div class="">  
+<div class="d-flex">  
     <SubSidebar v-bind:subSidebars="subSidebars">Khác</SubSidebar>
+    <router-link></router-link>
 </div>
 </template>
 <script>
-import SubSidebar from '../components/SubSidebar.vue'
+import SubSidebar from '../components/layouts/SubSidebar.vue'
 export default {
   data() {
     return {
@@ -13,32 +14,32 @@ export default {
           id: 1,
           nameSub: "Thu chi định kì",
           iconSub: "far fa-clock fa-1x",
-          activeComponent: "account"
+          activeComponent: "/other/recurring"
         },
         {
           id: 2,
           nameSub: "Hạng mục thu chi",
           iconSub: "fas fa-server fa-1x",
-          activeComponent: "login"
+          activeComponent: "/other/categories"
         },
         {
           id: 3,
           nameSub: "Trợ giúp/Phản hồi",
           iconSub: "far fa-question-circle",
-          activeComponent: "expenseNote"
+          activeComponent: "/other/help"
         },
         
         {
           id: 4,
           nameSub: "Giới thiệu bạn bè",
           iconSub: "fab fa-usb",
-          activeComponent: "expenseNote"
+          activeComponent: "/other/connectFriends"
         },
         {
           id: 5,
           nameSub: "Thiết lập",
           iconSub: "fas fa-ellipsis-h",
-          activeComponent: "expenseNote"
+          activeComponent: "/other/settings"
         },
        
       ]
