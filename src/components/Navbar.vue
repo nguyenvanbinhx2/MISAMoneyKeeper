@@ -4,6 +4,7 @@
                 <div class="col-md-5 d-flex col-sx-12">
                 <div class="align-items-center d-flex border-right">
                         <h1 class="text-white mx-5 pt-2 align-items-center " style="font-size:24px">Sổ Thu Chi MISA</h1>
+
                 <i class="far fa-credit-card pl-2 icon-style"></i>
                 <p style="font-size:18px" class="text-white pl-2 m-auto ">Tài chính hiện tại:</p>
                 </div>
@@ -24,14 +25,17 @@
                         </div>   
                         <div class="user-account ">
                                 <div class="" @click="open=!open" ><i class="fas fa-user btn-style" style="cursor:pointer;font-size:32px"></i></div>
+                                <transition name="fade">
                                 <div class="dropdown-content" v-if="open" >
                                         <div class=""> Xin chao Ban</div>
+
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Nâng cấp lên phiên bản Premium</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Thay đổi thông tin cá nhân</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Liên kết tài khoản</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Đặt mật khẩu</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Đăng xuất</span></div></a></li>
-                                </div>
+                                        </div>
+                                </transition>
 
 
                         </div>     
@@ -75,7 +79,7 @@ export default {
 } */
 
 #dropdownMenu{
-        margin-top: 12px;
+        position: relative;
 }
 
 .dropdown-content{
@@ -109,7 +113,8 @@ export default {
 }
 
 .container-top {
-  height: 64px;
+
+  height: 50px;
   background-color: rgb(8, 72, 102)
 }
 .icon-style {
@@ -126,18 +131,6 @@ p {
         background-color: white;
 }
 
-    .active{
-        background: green;
-    }
-.menu-left span
-    {
-        width: 100%;
-        height: 100%;
-    }
-    .menu-on-left:hover{
-        background-color:#319e4e;
-        color:rgb(8, 72, 102);
-    }
     .list-finance{
         display: none;
     }
@@ -161,18 +154,18 @@ p {
             position: relative;
     }
     .btn-style{
-            width:150px;height:40px;
-
-    }
-    .btn-style:hover{
-            color: rgb(8, 72, 102);
-    }
-    .btn-style:active{
-            color: rgb(8, 72, 102);
+            width:150px;height:30px;
 
     }
     .user-account{
             height: 100%;
+            text-align: center
     }
+    .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
 </style>

@@ -8,13 +8,17 @@ import Finance from '../components/Finance'
 import Home from '../views/Home.vue'
 import Other from '../views/Other.vue'
 import Report from '../views/Report.vue'
+import VuePageTransition from 'vue-page-transition'
+ 
+Vue.use(VuePageTransition)
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:"/home",
     name:'home',
-    component :Home
+    component :Home,
+    meta: { transition: 'fade-in-right' },
   },
   {
     path: '/',
@@ -58,7 +62,9 @@ const routes = [
   {
     path:'/other',
     name:'other',
-    component :Other
+    component :Other,
+    meta: { transition: 'slide' },
+
   }
 ]
 

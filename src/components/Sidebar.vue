@@ -3,6 +3,7 @@
   <img src="./../assets/Logo_MK.png"  style="height:64px;width:85px;curser:pointer" />
 
     <ul class="ml-0  p-0 list-menu hidden-xs-down" style="height:100%">
+
       <!-- <router-link to="/" class="text-decoration-none"> -->
       <li
         v-for="item in items"
@@ -32,7 +33,8 @@ export default {
           iconClass: "fas fa-home",
           isHover: false,
           navName: "Tổng quan",
-          activeComponent: "/home"
+          activeComponent: "/home",
+          
         },
         {
           id: 2,
@@ -111,6 +113,7 @@ export default {
   height: 100%;
   border: 1px solid #000;
   background-color: rgb(8, 72, 102);
+  z-index: 1;
 }
 .menu-on-left ul li {
   text-align: center;

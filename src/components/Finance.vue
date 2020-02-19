@@ -1,3 +1,4 @@
+
 <template>
     <div class="row content border m-0">
     <SubSidebar v-bind:subSidebars="subSidebars">Tài Khoản</SubSidebar>
@@ -19,20 +20,7 @@
                   aria-expanded="true"
                   v-bind:aria-control="item.id"
                 >
-                <!-- <div class="col-md-10 row align-items-center" style="cursor:pointer;height:100%">
-                    <div class="col-md-4 " style="height:100%">
-                    <div class="d-inline-flex" style="height:100%">
-                      <i :class="item.icon"></i>
-                      <h5  style="height:100%">{{item.nameAccount}}</h5>
-                    </div>
-                  </div>
-                  <div class="col-md-6 align-items-center" style="height:100%">
-                    <div class="d-inline-flex" style="height:100%">
-                      <p>Còn:</p>
-                      <h4>{{item.moneyAmount}}</h4>
-                    </div>
-                  </div>
-                </div> -->
+                
                   <div class="col-md-10 row align-items-center" style="cursor:pointer">
                       <div class="col-md-6 "><i :class="item.icon"></i>
                       <span class="ml-3">{{item.nameAccount}}</span></div>
@@ -133,29 +121,7 @@ export default {
           icon: "fas fa-pen"
         },
 
-        {
-          id: 4,
 
-          nameAccount: "Ví tiền mặt",
-          moneyAmount: "500000vnd",
-          icon: "fas fa-pen"
-        },
-
-        {
-          id: 5,
-
-          nameAccount: "Ví tiền mặt",
-          moneyAmount: "500000vnd",
-          icon: "fas fa-pen"
-        },
-
-        {
-          id: 6,
-
-          nameAccount: "Ví tiền mặt",
-          moneyAmount: "500000vnd",
-          icon: "fas fa-pen"
-        }
       ]
     };
   },
@@ -164,13 +130,7 @@ export default {
   },
   methods: {}
 
-  // mounted(){
-  //     $('.item-in-list').click(function(){
-  //         this.id = $(this).attr('id');
-  //         this.id2 = $("#" + this.id + 'ul').css('display', 'block');
 
-  //     })
-  // }
 };
 </script>
 

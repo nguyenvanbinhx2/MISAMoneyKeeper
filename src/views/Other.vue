@@ -1,5 +1,5 @@
 <template>
-<div class="border">  
+<div class="">  
     <SubSidebar v-bind:subSidebars="subSidebars">Khác</SubSidebar>
 </div>
 </template>

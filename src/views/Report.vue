@@ -1,5 +1,6 @@
 <template>
-<div class="">  
+
+<div class="container-report">  
     <SubSidebar v-bind:subSidebars="subSidebars">Báo cáo</SubSidebar>
 </div>
 </template>

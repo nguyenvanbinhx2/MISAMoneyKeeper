@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <div class="d-flex " style="height:100vh">
       <SideBar />
       <div class="" style="width:100%;height:100%">
@@ -8,6 +9,7 @@
         <router-view />
         </transition>
       </div>
+
     </div>
   </div>
 </template>
@@ -23,14 +25,15 @@ export default {
   name: "app",
   data() {
     return {
-      authenciate: false,
-      mockAccount: {
-        username: "admin",
-        password: "1"
-      }
-    };
+
+      prevHeight:0,
+      authenciate:false,
+
+    }
+
   },
-};
+  
+   }
 </script>
 
 
@@ -38,6 +41,15 @@ export default {
 #app {
   height: 100%;
   width: 100%;
+
+  
+  
+  
+} 
+.main{
+  width: 100%;
+  height: 100%;
+  
 }
 
 #nav {
@@ -52,11 +64,25 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-.view-enter-to,.view-leave{
-  opacity: 0;
-  transition: 
+.view-enter-active,.view-leave-active{
+  transition: opacity 0.3s ease-in-out,transform 0.3s ease;
+
 }
-.view-enter,.view-leave-to{
-  opacity: 1;
+.view-enter-active{
+  transition-delay: 0.5s
+}
+.view-enter{
+  opacity: 0;
+  transform: translateX(-20px)
+}
+.view-enter-to,.view-leave{
+  opacity: 0.5;
+  transform: translateX(0px);
+  z-index: -1;
+}
+.view-leave-to{
+  opacity: 0;
+  transform: translateX(100px);
+  z-index: -1
 }
 </style>
