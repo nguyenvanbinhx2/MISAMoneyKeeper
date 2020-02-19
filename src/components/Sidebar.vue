@@ -1,6 +1,8 @@
 <template>
-  <div class="menu-on-left border shadow-sm">
-    <ul class="ml-0 p-0">
+  <div class="menu-on-left border shadow-sm" style="height:100%">
+  <img src="./../assets/Logo_MK.png"  style="height:64px;width:85px;curser:pointer" />
+
+    <ul class="ml-0  p-0 list-menu hidden-xs-down" style="height:100%">
       <!-- <router-link to="/" class="text-decoration-none"> -->
       <li
         v-for="item in items"
@@ -9,7 +11,7 @@
       >
         <router-link :to="item.activeComponent" class="router-link">
           <i :class="item.iconClass" style="font-size:32px"></i>
-          <p>{{item.navName}}</p>
+          <p>{{item.navName}}</p> 
         </router-link>
       </li>
     </ul>
@@ -17,10 +19,13 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   name: "sidebar",
   data() {
     return {
+      bind:true,
+      bindSize:'S',
       items: [
         {
           id: 1,
@@ -69,10 +74,34 @@ export default {
       ]
     };
   },
-  methods: {}
+
+  // methods(){
+  //   checkEqual(a, b){
+      
+  //   }
+  // },
+  
+  watched(){
+    $(window).resize(function(){
+      if($(window).width() <= 600){
+        // this.bind = $('.list-menu').css('display', 'none');
+          this.bindSize ='A'; 
+          
+               }
+      else{
+        // this.bind = $('.list-menu').css('display', 'block');
+        this.bindSize= 'S';
+      }
+      console.log(this.bindSize);
+      
+    })
+  }
 };
 </script>
 <style scoped>
+.active{
+  display: none;
+}
 .home {
   width: 100%;
   align-items: stretch;
@@ -81,11 +110,11 @@ export default {
   width: 90px;
   height: 100%;
   border: 1px solid #000;
-  background-color: #017de3;
+  background-color: rgb(8, 72, 102);
 }
 .menu-on-left ul li {
   text-align: center;
-  border-bottom: 1px solid #135995;
+  border-bottom: 1px solid rgb(8, 72, 102);
   margin: 0;
   height: 90px;
 }

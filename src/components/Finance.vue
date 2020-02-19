@@ -1,6 +1,5 @@
 <template>
-  <div class="container-fluid">
-    <div class="row content border">
+    <div class="row content border m-0">
     <SubSidebar v-bind:subSidebars="subSidebars">Tài Khoản</SubSidebar>
       <div class="col-md">
         <div class="container shadow">
@@ -81,7 +80,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

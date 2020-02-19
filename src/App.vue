@@ -1,51 +1,36 @@
 <template>
   <div id="app">
-    <NavBar/>
-    <div class="d-flex">
-      <SideBar/>
+    <div class="d-flex " style="height:100vh">
+      <SideBar />
       <div class="" style="width:100%;height:100%">
-      <router-view/>
-    </div>
+        <NavBar />
+        <transition name="view">
+        <router-view />
+        </transition>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import NavBar from '../src/components/Navbar.vue'
-import SideBar from '../src/components/Sidebar.vue'
+import NavBar from "../src/components/Navbar.vue";
+import SideBar from "../src/components/Sidebar.vue";
 export default {
-  components:{
+  components: {
     NavBar,
     SideBar
   },
-  name:'app',
-  data(){
+  name: "app",
+  data() {
     return {
-      authenciate:false,
-      mockAccount:{
-        username:"admin",
-        password:"1"
+      authenciate: false,
+      mockAccount: {
+        username: "admin",
+        password: "1"
       }
-    }
-
+    };
   },
-  mounted(){
-    if(!this.authenciate){
-      // this.$router.replace({name:'Login'});
-      // this.$router.push('login')
-
-    }
-  },
-  methods:{
-    setAuthenciate(status){
-      this.authenciate =status;
-
-    },
-    logout(){
-      this.authenciate =false;
-    }
-  }
-}
+};
 </script>
 
 
@@ -53,9 +38,7 @@ export default {
 #app {
   height: 100%;
   width: 100%;
-  
-  
-} 
+}
 
 #nav {
   padding: 30px;
@@ -68,5 +51,12 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+.view-enter-to,.view-leave{
+  opacity: 0;
+  transition: 
+}
+.view-enter,.view-leave-to{
+  opacity: 1;
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
-  <div class="container-top">
-        <div class="row">
-                <div class="col-md-5 d-flex">
-                <img src="./../assets/Logo_MK.png" style="height:64px;width:85px" />
-                <div class="align-items-center d-flex">
-                        <h1 class="text-white mx-5 pt-2 align-items-center" style="font-size:24px">Sổ Thu Chi MISA</h1>
+  <div class="container-top shadow-lg border-lg">
+        <div class="row for-desktop-using">
+                <div class="col-md-5 d-flex col-sx-12">
+                <div class="align-items-center d-flex border-right">
+                        <h1 class="text-white mx-5 pt-2 align-items-center " style="font-size:24px">Sổ Thu Chi MISA</h1>
                 <i class="far fa-credit-card pl-2 icon-style"></i>
                 <p style="font-size:18px" class="text-white pl-2 m-auto ">Tài chính hiện tại:</p>
                 </div>
@@ -17,16 +16,16 @@
                                 <div class="noti_Counter rounded-circle"><p style="font-size:11px;text-align:center">7</p></div>
                         </div>
                         
-                        <button type="button" class="btn btn-success btn-style shadow border-0 mr-3 ml-3 " data-toggle="modal" data-target="#exampleModal" >
+                        <button type="button" class="btn btn-success btn-style shadow border-0 mr-3 ml-3 border-right" data-toggle="modal" data-target="#exampleModal" >
                                 <i class="fas fa-plus"></i> Thêm chi tiêu
                         </button>
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="">
                                 <ExpenseNote/>
                         </div>   
                         <div class="user-account ">
-                                <button type="button"  @click="open" class="btn btn-secondary shadow border-0 btn-style "  id="dropdownMenu" >Xin chào Đức</button>
-
+                                <div class="" @click="open=!open" ><i class="fas fa-user btn-style" style="cursor:pointer;font-size:32px"></i></div>
                                 <div class="dropdown-content" v-if="open" >
+                                        <div class=""> Xin chao Ban</div>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Nâng cấp lên phiên bản Premium</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Thay đổi thông tin cá nhân</span></div></a></li>
                                         <li><a href="#"><div><span><i class="fas fa-home"></i></span><span>Liên kết tài khoản</span></div></a></li>
@@ -38,6 +37,8 @@
                         </div>     
                 </div>  
         </div>
+
+        
     
   </div>
 </template>
@@ -45,13 +46,14 @@
 import ExpenseNote from '../components/ExpenseNote.vue'
 export default {
         components:{
-                ExpenseNote
+                ExpenseNote,
         },
 
         data:() => {
                 return{
                         test: '',
-                        open: false
+                        open: false,
+                      
                 }
         },
         methods: {
@@ -62,6 +64,16 @@ export default {
 };
 </script>
 <style scoped>
+/* @media only screen and(max-width: 576px){
+        div.for-desktop-using{
+                display: none;
+        }
+
+        div.for-mobile-using{
+                display: block;
+        }
+} */
+
 #dropdownMenu{
         margin-top: 12px;
 }
@@ -98,6 +110,7 @@ export default {
 
 .container-top {
   height: 64px;
+  background-color: rgb(8, 72, 102)
 }
 .icon-style {
   color: white;
